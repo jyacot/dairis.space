@@ -1,35 +1,45 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { FeatherModule } from 'angular-feather';
+import { Instagram, Linkedin, Mail } from 'angular-feather/icons';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let fixture: ComponentFixture<AppComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        FeatherModule.pick({ Instagram, Mail, Linkedin }),
       ],
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'dairis-space'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('dairis-space');
+  it('should Dairis name', () => {
+    const element = fixture.debugElement.query(By.css('.name'));
+    expect(element.nativeElement.textContent).toBe('Dairis Zambrano');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('dairis-space app is running!');
+  it(`should Dairis has role`, () => {
+    const element = fixture.debugElement.query(By.css('.role'));
+    expect(element.nativeElement.textContent).toBe('Trabajadora Social');
+  });
+
+  it('should Dairis has foto', () => {
+    const element = fixture.debugElement.query(By.css('.photo'));
+    expect(element).not.toBeNull();
+  });
+
+  it('Should have 3 skills', () => {
+    const element = fixture.debugElement.query(By.css('.skills'));
+    expect(element.childNodes.length).toBe(3);
   });
 });
