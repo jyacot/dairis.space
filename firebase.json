@@ -1,6 +1,0 @@
-{
-  "hosting": {
-    "public": "dist/dairis-space",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-  }
-}
