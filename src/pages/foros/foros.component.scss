@@ -1,0 +1,28 @@
+.foro-container {
+  padding: 10px;
+
+  .card {
+    // card with borders
+    background-color: #d8d2d2;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .images {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      .image {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-width: 800%;
+        height: 250px;
+      }
+    }
+  }
+}
