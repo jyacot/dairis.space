@@ -1,0 +1,22 @@
+<div class="container">
+  <div *ngIf="(foro$ | async) as foro; else noForo" class="foro-container">
+    <div class="title">
+      {{foro.title}}
+    </div>
+    <div class="sliders" *ngFor="let slider of foro.sliders; index as i">
+      <div class="card">
+        <div class="images">
+          <div class="image" *ngFor="let image of slider.images" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+          </div>
+        </div>
+        <app-slider [audios]="slider.audiosUrl"></app-slider>
+      </div>
+      <hr *ngIf="i > foro.sliders.length" />
+    </div>
+  </div>
+  <ng-template #noForo>
+    <a href="/">
+      Regresar
+    </a>
+  </ng-template>
+</div>

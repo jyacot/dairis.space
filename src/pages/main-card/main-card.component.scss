@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .card {
+    background-color: #9762b4;
+    color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 4px 2px 3px rgba($color: #000000, $alpha: 0.35);
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.5fr;
+    gap: 20px;
+    .header {
+      .images {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .photo {
+          background-image: url(../../assets/images/dai2.webp);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+          justify-self: flex-start;
+        }
+        .sublogo {
+          background-image: url(../../assets/images/iconb.png);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          height: 5rem;
+          width: 5rem;
+          display: none;
+          // border-radius: 50%;
+        }
+      }
+    }
+    .body {
+      h1,
+      h2 {
+        margin: 0;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+      }
+      .skills {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .name,
+      .role {
+        text-align: center;
+      }
+    }
+    .contacts {
+      font-size: 1rem;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+      // margin-top: 2rem;
+      a {
+        color: white;
+        font-size: 0;
+        fa-icon {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .container {
+    .card {
+      max-height: 300px;
+      grid-template-rows: 3fr 1fr;
+      .header {
+        grid-row-start: 1;
+        grid-row-end: 4;
+        .images {
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 1rem;
+          .photo {
+            width: 8rem;
+            height: 8rem;
+          }
+        }
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        .name,
+        .role {
+          text-align: right;
+        }
+
+        .skills {
+          text-align: right;
+          // border: 1px solid red;
+        }
+      }
+      #sublogo {
+        display: flex;
+      }
+      .contacts {
+        grid-column-start: 2;
+        grid-row-start: 3;
+      }
+    }
+  }
+}
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) {
+// }
+
+// // X-Large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) {
+// }
+
+// // XX-Large devices (larger desktops, 1400px and up)
+// @media (min-width: 1400px) {
+// }
