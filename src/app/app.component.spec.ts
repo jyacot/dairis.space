@@ -4,6 +4,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FeatherModule } from 'angular-feather';
 import { Instagram, Linkedin, Mail } from 'angular-feather/icons';
 import { AppComponent } from './app.component';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -12,6 +14,7 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         FeatherModule.pick({ Instagram, Mail, Linkedin }),
+        TranslateModule.forRoot(),
       ],
       declarations: [AppComponent],
     }).compileComponents();
