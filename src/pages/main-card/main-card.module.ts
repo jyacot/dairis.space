@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MainCardComponent } from './main-card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const Router = RouterModule.forChild([
@@ -21,7 +22,8 @@ const Router = RouterModule.forChild([
   ],
   imports: [
     CommonModule, FontAwesomeModule,
-    Router
+    Router,
+    TranslateModule,
   ]
 })
 export class MainCardModule { }
