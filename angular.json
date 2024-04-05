@@ -76,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dairis-space:build"
+            "buildTarget": "dairis-space:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dairis-space:build:production"
+              "buildTarget": "dairis-space:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dairis-space:build"
+            "buildTarget": "dairis-space:build"
           }
         },
         "test": {
