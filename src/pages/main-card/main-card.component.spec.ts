@@ -2,9 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MainCardComponent } from './main-card.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { TranslateTestingModule } from 'ngx-translate-testing';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 
 
@@ -17,20 +18,16 @@ describe('MainCardComponent', () => {
   let fixture: ComponentFixture<MainCardComponent>;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        HttpClientTestingModule,
+    declarations: [MainCardComponent],
+    imports: [RouterTestingModule,
         FontAwesomeModule,
         TranslateTestingModule
-          .withTranslations({
+            .withTranslations({
             en: TRANSLATION_EN,
             es: TRANSLATION_ES
-          }).withDefaultLanguage('es'),
-      ],
-      declarations: [MainCardComponent],
-
-
-    }).compileComponents();
+        }).withDefaultLanguage('es')],
+    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+}).compileComponents();
     fixture = TestBed.createComponent(MainCardComponent);
   });
 
