@@ -5,9 +5,10 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-foros',
-  templateUrl: './foros.component.html',
-  styleUrls: ['./foros.component.scss']
+    selector: 'app-foros',
+    templateUrl: './foros.component.html',
+    styleUrls: ['./foros.component.scss'],
+    standalone: false
 })
 export class ForosComponent {
   foros: Foro[] = Foros;

@@ -7,9 +7,10 @@ import {
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
-  selector: 'app-main-card',
-  templateUrl: './main-card.component.html',
-  styleUrls: ['./main-card.component.scss']
+    selector: 'app-main-card',
+    templateUrl: './main-card.component.html',
+    styleUrls: ['./main-card.component.scss'],
+    standalone: false
 })
 export class MainCardComponent {
   icons = {
