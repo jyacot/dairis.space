@@ -1,0 +1,6 @@
+# Permitir que todos los motores de búsqueda indexen el sitio
+User-agent: *
+Disallow:
+
+# Especificar la ubicación del sitemap
+Sitemap: https://dairis.space/sitemap.xml

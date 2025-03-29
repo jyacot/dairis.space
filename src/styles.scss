@@ -2,13 +2,11 @@
 
 @font-face {
   font-family: "TruenoRegular";
-  src: url("https://fontlibrary.org/assets/fonts/trueno/69d25d10193139d4a9cfc9d2196c23dc/7aba95e5ff98d5a275ced8ae58144c5e/TruenoRegular.otf");
+  src: url("./assets/fonts/TruenoRg.otf");
   font-display: swap;
 }
 
 body {
-  // background-image: linear-gradient(to bottom right, #421E56, #BC6083);
-  // background-color: #914fb4;
   font-family: "TruenoRegular", serif;
   margin: 0;
 }
