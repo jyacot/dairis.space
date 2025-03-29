@@ -4,6 +4,8 @@ import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import AppServerModule from './src/main.server';
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { Readable } from 'stream';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -11,6 +13,8 @@ export function app(): express.Express {
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
+
+  const distFolder = join(process.cwd(), 'dist/dairis-space/browser');
 
   const commonEngine = new CommonEngine();
 
@@ -20,6 +24,33 @@ export function app(): express.Express {
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
+
+  // Servir robots.txt
+  server.get('/robots.txt', (req, res) => {
+    res.sendFile(join(distFolder, 'robots.txt'));
+  });
+
+  // Ruta para generar y servir el sitemap.xml
+  server.get('/sitemap.xml', async (req, res) => {
+    try {
+      const links = [
+        { url: '/', changefreq: 'daily', priority: 1.0 },
+        // Agrega más rutas según sea necesario
+      ];
+
+      const sitemapStream = new SitemapStream({ hostname: 'https://dairis.space' });
+      const xmlData = await streamToPromise(Readable.from(links).pipe(sitemapStream));
+
+      res.header('Content-Type', 'application/xml');
+      res.send(xmlData.toString());
+    } catch (error) {
+      console.error('Error al generar el sitemap:', error);
+      res.status(500).send('Error al generar el sitemap');
+    }
+  });
+
+
+
   server.get('**', express.static(browserDistFolder, {
     maxAge: '1y',
     index: 'index.html',
