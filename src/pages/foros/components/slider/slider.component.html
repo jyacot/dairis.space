@@ -1,7 +1,9 @@
 <div class="slider">
   <!-- <input type="range" min="0" max="100" value="0" (change)="onSlideChange($event)" /> -->
-  <audio controls *ngFor="let audio of audios">
-    <source [src]="audio" type="audio/mp4" />
-    Your browser does not support the audio element.
-  </audio>
+  @for (audio of audios; track audio) {
+    <audio controls>
+      <source [src]="audio" type="audio/mp4" />
+      Your browser does not support the audio element.
+    </audio>
+  }
 </div>

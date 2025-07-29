@@ -1,22 +1,29 @@
 <div class="container">
-  <div *ngIf="(foro$ | async) as foro; else noForo" class="foro-container">
-    <div class="title">
-      {{foro.title}}
-    </div>
-    <div class="sliders" *ngFor="let slider of foro.sliders; index as i">
-      <div class="card">
-        <div class="images">
-          <div class="image" *ngFor="let image of slider.images" [ngStyle]="{'background-image': 'url(' + image + ')'}">
-          </div>
-        </div>
-        <app-slider [audios]="slider.audiosUrl"></app-slider>
+  @if ((foro$ | async); as foro) {
+    <div class="foro-container">
+      <div class="title">
+        {{foro.title}}
       </div>
-      <hr *ngIf="i > foro.sliders.length" />
+      @for (slider of foro.sliders; track slider; let i = $index) {
+        <div class="sliders">
+          <div class="card">
+            <div class="images">
+              @for (image of slider.images; track image) {
+                <div class="image" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+                </div>
+              }
+            </div>
+            <app-slider [audios]="slider.audiosUrl"></app-slider>
+          </div>
+          @if (i > foro.sliders.length) {
+            <hr />
+          }
+        </div>
+      }
     </div>
-  </div>
-  <ng-template #noForo>
+  } @else {
     <a href="/">
       Regresar
     </a>
-  </ng-template>
+  }
 </div>
