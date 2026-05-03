@@ -1,7 +1,21 @@
 {
   "MAIN_NAME": "Dairis Zambrano",
-  "ROLE": "Social Worker",
+  "FAMILY_THERAPIST": "Family Therapist",
+  "LIFE_COACH": "Life Coach",
+  "GESTALT": "Gestalt Facilitator",
+  "SOCIAL_WORKER": "Social Worker",
+  "UCV": "B.S. UCV",
+  "SATIR_QUOTE": "Boundaries born from love don't confine — they set free.",
   "FAMILY_THERAPY": "Family Therapy",
-  "COUPLE_THERAPY": "Couples Therapist",
-  "LIFE_COACH": "Live Coach"
+  "COUPLE_THERAPY": "Couples Therapy",
+  "LIFE_COACH_SKILL": "Life Coaching",
+  "GESTALT_SKILL": "Gestalt",
+  "INSTAGRAM": "Instagram",
+  "LINKEDIN": "LinkedIn",
+  "WHATSAPP": "WhatsApp",
+  "RESOURCES_LINK": "Resources · Emotional Wellness",
+  "SATIR_MANTRA": "Peace within · Peace between · Peace among",
+  "FOROS_QUOTE": "Learning is daring to see what we couldn't see before.",
+  "BACK": "Go back",
+  "FORO_NOT_FOUND": "This resource is not available."
 }

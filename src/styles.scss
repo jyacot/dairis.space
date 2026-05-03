@@ -1,14 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Fuente local heredada — se mantiene por compatibilidad pero ya no es la principal */
 @font-face {
   font-family: "TruenoRegular";
   src: url("./assets/fonts/TruenoRg.otf");
   font-display: swap;
 }
 
+/* Variables de diseño globales */
+:root {
+  --color-bg:         #FAF7F2;
+  --color-card:       #FFFFFF;
+  --color-accent:     #7B42A8;
+  --color-warm:       #C4876A;
+  --color-text:       #3D3530;
+  --color-text-muted: #7A7068;
+  --color-border:     #E8E0D5;
+  --color-pill-bg:    #F0EAF7;
+
+  --font-heading: 'Lora', Georgia, serif;
+  --font-body:    'DM Sans', 'TruenoRegular', sans-serif;
+}
+
 body {
-  font-family: "TruenoRegular", serif;
+  font-family: var(--font-body);
   margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 $grid-breakpoints: (

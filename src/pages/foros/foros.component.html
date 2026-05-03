@@ -1,9 +1,13 @@
 <div class="container">
   @if ((foro$ | async); as foro) {
     <div class="foro-container">
-      <div class="title">
-        {{foro.title}}
-      </div>
+
+      <header class="foro-header">
+        <a class="back-link" href="/">← {{'BACK' | translate}}</a>
+        <p class="foro-epigraph">{{'FOROS_QUOTE' | translate}}</p>
+        <h1 class="foro-title">{{foro.title}}</h1>
+      </header>
+
       @for (slider of foro.sliders; track slider; let i = $index) {
         <div class="sliders">
           <div class="card">
@@ -15,15 +19,14 @@
             </div>
             <app-slider [audios]="slider.audiosUrl"></app-slider>
           </div>
-          @if (i > foro.sliders.length) {
-            <hr />
-          }
         </div>
       }
+
     </div>
   } @else {
-    <a href="/">
-      Regresar
-    </a>
+    <div class="not-found">
+      <p>{{'FORO_NOT_FOUND' | translate}}</p>
+      <a href="/">← {{'BACK' | translate}}</a>
+    </div>
   }
 </div>
