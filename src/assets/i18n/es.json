@@ -1,7 +1,21 @@
 {
   "MAIN_NAME": "Dairis Zambrano",
-  "ROLE": "Trabajadora Social",
+  "FAMILY_THERAPIST": "Terapeuta Familiar",
+  "LIFE_COACH": "Coach de Vida",
+  "GESTALT": "Facilitadora Gestáltica",
+  "SOCIAL_WORKER": "Trabajadora Social",
+  "UCV": "Lic. UCV",
+  "SATIR_QUOTE": "Los límites que nacen del amor no encierran — liberan.",
   "FAMILY_THERAPY": "Terapia Familiar",
   "COUPLE_THERAPY": "Terapia de Pareja",
-  "LIFE_COACH": "Coach de Vida"
+  "LIFE_COACH_SKILL": "Coach de Vida",
+  "GESTALT_SKILL": "Gestalt",
+  "INSTAGRAM": "Instagram",
+  "LINKEDIN": "LinkedIn",
+  "WHATSAPP": "WhatsApp",
+  "RESOURCES_LINK": "Ver recursos · Gestión Emocional",
+  "SATIR_MANTRA": "Paz dentro · Paz entre · Paz entre todos",
+  "FOROS_QUOTE": "Aprender es atreverse a ver lo que antes no podíamos ver.",
+  "BACK": "Regresar",
+  "FORO_NOT_FOUND": "Este recurso no está disponible."
 }

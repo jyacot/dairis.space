@@ -1,34 +1,53 @@
 <div class="container">
   <main class="card">
+
     <div class="header">
       <div class="images">
         <div class="photo"></div>
-        <div class="sublogo" id="sublogo"></div>
       </div>
     </div>
+
     <div class="body">
       <h1 class="name">{{'MAIN_NAME' | translate}}</h1>
-      <h2 class="role">{{'ROLE' | translate}}</h2>
+      <p class="roles">
+        {{'FAMILY_THERAPIST' | translate}} · {{'LIFE_COACH' | translate}} · {{'GESTALT' | translate}}
+      </p>
+      <p class="subtitle">{{'SOCIAL_WORKER' | translate}} · {{'UCV' | translate}}</p>
+
+      <blockquote class="satir-quote">
+        {{'SATIR_QUOTE' | translate}}
+      </blockquote>
+
       <div class="skills">
-        <span> {{'FAMILY_THERAPY' | translate}} </span>
-        <span> {{'COUPLE_THERAPY'| translate}} </span>
-        <span> {{'LIFE_COACH' | translate}} </span>
+        <span>{{'FAMILY_THERAPY' | translate}}</span>
+        <span>{{'COUPLE_THERAPY' | translate}}</span>
+        <span>{{'LIFE_COACH_SKILL' | translate}}</span>
+        <span>{{'GESTALT_SKILL' | translate}}</span>
       </div>
     </div>
+
     <div class="contacts">
-      <a href="https://www.instagram.com/dairiszam/" target="_blank">
-        Instagram
+      <a href="https://www.instagram.com/dairiszam/" target="_blank" rel="noopener">
         <fa-icon [icon]="icons.instagram"></fa-icon>
+        <span>{{'INSTAGRAM' | translate}}</span>
       </a>
-      <a href="https://www.linkedin.com/in/dairis-zambrano-4232803b/" target="_blank">
-        Linkedin
+      <a href="https://www.linkedin.com/in/dairis-zambrano-4232803b/" target="_blank" rel="noopener">
         <fa-icon [icon]="icons.linkedin"></fa-icon>
+        <span>{{'LINKEDIN' | translate}}</span>
       </a>
-      <a href="https://wa.me/+584122747566" target="_blank">
-        Whatsapp
+      <a href="https://wa.me/+584122747566" target="_blank" rel="noopener">
         <fa-icon [icon]="icons.whatsapp"></fa-icon>
+        <span>{{'WHATSAPP' | translate}}</span>
       </a>
     </div>
-  </main>
 
+    <!-- <div class="foros-link">
+      <a href="/foros/27052023">{{'RESOURCES_LINK' | translate}}</a>
+    </div> -->
+
+    <footer class="satir-mantra">
+      {{'SATIR_MANTRA' | translate}}
+    </footer>
+
+  </main>
 </div>
